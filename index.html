@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Flexee: Nano CSS grid system</title>
+  <link href='http://fonts.googleapis.com/css?family=Dosis:200,300,400,500,600,700,800' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="example.css" media="screen" type="text/css" />
+  <link rel="stylesheet" href="flexee.css" media="screen" type="text/css" />
+</head>
+<body>
+
+  <div id="header">
+    <h1>F &nbsp;&nbsp; l &nbsp;&nbsp; e &nbsp;&nbsp; x &nbsp;&nbsp; e &nbsp;&nbsp; e</h1>
+    <h2>The Nano CSS grid system</h2>  
+  </div>
+  
+  
+  <div id="content">
+    <div class="corset">
+    
+      <div class="xs20 s40 m50 l60 xl80">
+        <div class="box"></div>    
+      </div><div class="xs80 s60 m50 l40 xl20">
+        <div class="box"></div>    
+      </div>
+      
+      <div class="divider"></div>
+      
+      <div class="xs100 l25">
+        <div class="box"></div>  
+      </div><div class="l25 hidden-xs">
+        <div class="box"></div>  
+      </div><div class="l25 hidden-xs">
+        <div class="box"></div>  
+      </div><div class="l25 hidden-xs">
+        <div class="box"></div>  
+      </div>
+      
+      <div class="divider"></div>
+      
+      <div class="xs50 l20">
+        <div class="box"></div>  
+      </div><div class="xs50 l20">
+        <div class="box"></div>  
+      </div><div class="xs33 l20">
+        <div class="box"></div>  
+      </div><div class="xs34 l20">
+        <div class="box"></div>  
+      </div><div class="xs33 l20">
+        <div class="box"></div>  
+      </div>
+    
+      <div class="divider"></div>
+    
+      <div class="xs100 s25 m50 l75 xl50 hidden-xs">
+        <div class="box"></div>
+      </div><div class="xs100 s75 m50 l25 xl50">
+        <div class="box"></div>
+      </div>
+      
+      <div class="divider"></div>
+      
+      <div class="xs100 s25 m50 l75 xl50 hidden-xs">
+        <div class="box"></div>
+      </div><div class="xs100 s75 m50 l25 xl50">
+        <div class="box"></div>
+      </div>
+      
+      <div class="divider"></div>
+      
+      <div class="xs100 s25 m50 l75 xl50 hidden-xs">
+        <div class="box"></div>
+      </div><div class="xs100 s75 m50 l25 xl50">
+        <div class="box"></div>
+      </div>
+      
+      <div class="divider"></div>
+      
+      <div class="xs100 s25 m50 l75 xl50 hidden-xs">
+        <div class="box"></div>
+      </div><div class="xs100 s75 m50 l25 xl50">
+        <div class="box"></div>
+      </div>
+      
+    </div><!--corset-->
+  </div>
+  
+  
+  <div id="footer">
+    <a id="download" href="flexee.css">Download</a>
+  </div>
+  
+ <!--
+ <div class="divider"></div>
+  
+  <div id="usagebox">
+      <h1>Usage</h1>
+      <pre>
+          <div class="block50">
+              A
+          </div><div class="block50">
+              B
+          </div>
+      </pre>
+  </div>
+  
+-->
+  
+  <script type="text/javascript" src="//code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script>
+      $('.box').each(function(){
+          var classes = $(this).parent().attr('class');
+          $(this).text(classes);
+      });
+  </script>
+  
+  
+</body>
+</html>
