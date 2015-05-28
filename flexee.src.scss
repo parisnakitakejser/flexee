@@ -1,0 +1,68 @@
+
+//--------------------------------------------------------------------------------------------------
+
+	// variable tweakers
+
+	$xl_views_from: 1500px;
+	$l_views_from:  1200px;		$l_views_to:  1499px;
+	$m_views_from:   992px;		$m_views_to:  1199px;
+	$s_views_from:   600px;		$s_views_to:   991px;
+								$xs_views_to:  599px;
+
+//--------------------------------------------------------------------------------------------------
+
+	// fix just in case the helper classes aren't included
+	.hidden {display:none}
+
+//--------------------------------------------------------------------------------------------------
+
+	// grid clearfixin
+	.grid:after { content:""; display:table; clear:both; }
+
+//--------------------------------------------------------------------------------------------------
+
+	// mutual styling definitions and fallback width definitions
+	@for $i from 1 through 100 { .xs#{$i}{width:#{$i}%;float:left} }
+	@for $i from 1 through 100 { .s#{$i}{width:#{$i}%;float:left} }
+	@for $i from 1 through 100 { .m#{$i}{width:#{$i}%;float:left} }
+	@for $i from 1 through 100 { .l#{$i}{width:#{$i}%;float:left} }
+	@for $i from 1 through 100 { .xl#{$i}{width:#{$i}%;float:left} }
+
+//--------------------------------------------------------------------------------------------------
+
+	// xs/extra-small screen (phones)
+	@media (max-width: $xs_views_to) {
+		.hidden-xs{display:none !important;}
+		.visible-xs{display:block !important;}
+		@for $i from 1 through 100 { .xs#{$i}{width:#{$i}%} }
+	}
+
+	// s/small screen (tablets)
+	@media (min-width:$s_views_from) and (max-width: $s_views_to) {
+	    .hidden-s{display:none !important;}
+	    .visible-s{display:block !important;}
+	    @for $i from 1 through 100 { .s#{$i}{width:#{$i}%} }
+	}
+
+	// m/medium screen (tablet/desktops)
+	@media (min-width:$m_views_from) and (max-width: $m_views_to) {
+		.hidden-m{display:none !important;}
+		.visible-m{display:block !important;}
+		@for $i from 1 through 100 { .m#{$i}{width:#{$i}%} }
+	}
+
+	// l/large screen: (desktops)
+	@media (min-width: $l_views_from) and (max-width: $l_views_to) {
+		.hidden-l{display:none !important;}
+		.visible-l{display:block !important;}
+		@for $i from 1 through 100 { .l#{$i}{width:#{$i}%} }
+	}
+
+	// xl/extra-large screen: (desktops)
+	@media (min-width: $xl_views_from) {
+		.hidden-xl{display:none !important;}
+		.visible-xl{display:block !important;}
+		@for $i from 1 through 100 { .xl#{$i}{width:#{$i}%} }
+	}
+
+//--------------------------------------------------------------------------------------------------

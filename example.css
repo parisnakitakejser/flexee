@@ -1,12 +1,12 @@
 * { margin:0; padding:0; }
 
 body {
-  background-color:#918868;
+  background-color:#c8e3de;
   font-family:dosis;
 } 
 
 #header {
-  background-color:#918868;
+  background-color:#d9eeea;
   padding-top:2em;
   padding-bottom:1.5em;
 }
@@ -14,14 +14,14 @@ body {
 h1 {
   text-align:center;
   text-transform:uppercase;
-  color:#DCEDB9;
+  color:#555;
   font-size:4em;
   cursor:default;
 }
 
 h2 {
   text-align:center;
-  color:#B1C1C0;
+  color:#777;
   font-size:1.5em;
   text-transform:uppercase;
   font-weight:300;
@@ -44,7 +44,7 @@ h2 {
   overflow:hidden;
   background-color:#d3e69f;
   border-radius:6px; -webkit-border-radius:6px; 
-  color:rgba(0,0,0,0.25);
+  color: #555;
   font-size:1.2em;
   white-space: pre;
 }
@@ -55,27 +55,42 @@ h2 {
     margin:10px 0;
 }
 
-#content .corset div:nth-child(5n+1) .box { background-color:#DDEDD9; }
-#content .corset div:nth-child(5n+2) .box { background-color:#DCEDB9; }
-#content .corset div:nth-child(5n+3) .box { background-color:#D2E59E; }
-#content .corset div:nth-child(5n+4) .box { background-color:#CBD081; }
-#content .corset div:nth-child(5n+5) .box { background-color:#CBC081; }
+#content .corset div:nth-child(5n+1) .box { background-color:#d9eeea; }
+#content .corset div:nth-child(5n+2) .box { background-color:#d9eeea; }
+#content .corset div:nth-child(5n+3) .box { background-color:#d9eeea; }
+#content .corset div:nth-child(5n+4) .box { background-color:#d9eeea; }
+#content .corset div:nth-child(5n+5) .box { background-color:#d9eeea; }
 
 #footer {
-  padding-top:2em;
+  padding-top:4em;
   text-align:center;
-  padding-bottom:2em;
+  padding-bottom:8em;
 }
 
 #download {
   text-align:center;
   text-transform:uppercase;
-  color:#DCEDB9;
-  font-size:3em;
+  color:#444;
+  font-size:4em;
   text-decoration:none;
   font-weight:600;
 }
 
 #download:hover {
+    color:#FFF;
+}
+
+#download-src {
+  display:block;
+  margin-top:1em;
+  text-align:center;
+  text-transform:uppercase;
+  color:#444;
+  font-size:1em;
+  text-decoration:none;
+  font-weight:600;
+}
+
+#download-src:hover {
     color:#FFF;
 }
