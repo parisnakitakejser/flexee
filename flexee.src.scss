@@ -1,18 +1,19 @@
+/* Flexee featherweight grid system v2.0 by williampaix: williampaix.com/projects/flexee / http://github.com/wpaix/flexee */
 
 //--------------------------------------------------------------------------------------------------
 
 	// variable tweakers
 
-	$xl_views_from: 1500px;
-	$l_views_from:  1200px;		$l_views_to:  1499px;
-	$m_views_from:   992px;		$m_views_to:  1199px;
-	$s_views_from:   600px;		$s_views_to:   991px;
-								$xs_views_to:  599px;
+	$xl_views_from: 1600px;
+	$l_views_from:  1200px;		$l_views_to:  1599px;
+	$m_views_from:   769px;		$m_views_to:  1199px;
+	$s_views_from:   500px;		$s_views_to:   768px;
+								$xs_views_to:  499px;
 
 //--------------------------------------------------------------------------------------------------
 
 	// fix just in case the helper classes aren't included
-	.hidden {display:none}
+	.hide {display:none}
 
 //--------------------------------------------------------------------------------------------------
 
@@ -22,47 +23,58 @@
 //--------------------------------------------------------------------------------------------------
 
 	// mutual styling definitions and fallback width definitions
-	@for $i from 1 through 100 { .xs#{$i}{width:#{$i}%;float:left} }
-	@for $i from 1 through 100 { .s#{$i}{width:#{$i}%;float:left} }
-	@for $i from 1 through 100 { .m#{$i}{width:#{$i}%;float:left} }
-	@for $i from 1 through 100 { .l#{$i}{width:#{$i}%;float:left} }
-	@for $i from 1 through 100 { .xl#{$i}{width:#{$i}%;float:left} }
+	$width: 0%;
+	@for $i from 0 through 100 { .xs#{$i}{width:$width+$i;float:left;min-height:1px} }
+	@for $i from 0 through 100 { .s#{$i}{width:$width+$i;float:left;min-height:1px} }
+	@for $i from 0 through 100 { .m#{$i}{width:$width+$i;float:left;min-height:1px} }
+	@for $i from 0 through 100 { .l#{$i}{width:$width+$i;float:left;min-height:1px} }
+	@for $i from 0 through 100 { .xl#{$i}{width:$width+$i;float:left;min-height:1px} }
 
 //--------------------------------------------------------------------------------------------------
 
 	// xs/extra-small screen (phones)
 	@media (max-width: $xs_views_to) {
-		.hidden-xs{display:none !important;}
-		.visible-xs{display:block !important;}
-		@for $i from 1 through 100 { .xs#{$i}{width:#{$i}%} }
+		.hide-xs{display:none !important;}
+		.show-xs{display:block !important;}
+		.show-inline-xs{display:inline !important;}
+		.show-inline-xs{display:inline-block !important;}
+		@for $i from 0 through 100 { .xs#{$i}{width:$width+$i} }
 	}
 
 	// s/small screen (tablets)
 	@media (min-width:$s_views_from) and (max-width: $s_views_to) {
-	    .hidden-s{display:none !important;}
-	    .visible-s{display:block !important;}
-	    @for $i from 1 through 100 { .s#{$i}{width:#{$i}%} }
+	    .hide-s{display:none !important;}
+	    .show-s{display:block !important;}
+	    .show-inline-s{display:inline !important;}
+		.show-inline-s{display:inline-block !important;}
+	    @for $i from 0 through 100 { .s#{$i}{width:$width+$i} }
 	}
 
 	// m/medium screen (tablet/desktops)
 	@media (min-width:$m_views_from) and (max-width: $m_views_to) {
-		.hidden-m{display:none !important;}
-		.visible-m{display:block !important;}
-		@for $i from 1 through 100 { .m#{$i}{width:#{$i}%} }
+		.hide-m{display:none !important;}
+		.show-m{display:block !important;}
+		.show-inline-m{display:inline !important;}
+		.show-inline-m{display:inline-block !important;}
+		@for $i from 0 through 100 { .m#{$i}{width:$width+$i} }
 	}
 
 	// l/large screen: (desktops)
 	@media (min-width: $l_views_from) and (max-width: $l_views_to) {
-		.hidden-l{display:none !important;}
-		.visible-l{display:block !important;}
-		@for $i from 1 through 100 { .l#{$i}{width:#{$i}%} }
+		.hide-l{display:none !important;}
+		.show-l{display:block !important;}
+		.show-inline-l{display:inline !important;}
+		.show-inline-l{display:inline-block !important;}
+		@for $i from 0 through 100 { .l#{$i}{width:$width+$i} }
 	}
 
 	// xl/extra-large screen: (desktops)
 	@media (min-width: $xl_views_from) {
-		.hidden-xl{display:none !important;}
-		.visible-xl{display:block !important;}
-		@for $i from 1 through 100 { .xl#{$i}{width:#{$i}%} }
+		.hide-xl{display:none !important;}
+		.show-xl{display:block !important;}
+		.show-inline-xl{display:inline !important;}
+		.show-inline-xl{display:inline-block !important;}
+		@for $i from 0 through 100 { .xl#{$i}{width:$width+$i} }
 	}
 
 //--------------------------------------------------------------------------------------------------
