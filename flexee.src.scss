@@ -20,15 +20,25 @@
 	// grid clearfixin
 	.grid:after { content:""; display:table; clear:both; }
 
+	@mixin loop-behaviour($loop-number: 0, $loop-width: 0) {
+		width:$loop-width+$loop-number;
+		float:left;
+		min-height:1px;
+		
+		> .box {
+			margin: $gutter / 2;
+		}
+	}
+	
 //--------------------------------------------------------------------------------------------------
 
 	// mutual styling definitions and fallback width definitions
 	$width: 0%;
-	@for $i from 0 through 100 { .xs#{$i}{width:$width+$i;float:left;min-height:1px} }
-	@for $i from 0 through 100 { .s#{$i}{width:$width+$i;float:left;min-height:1px} }
-	@for $i from 0 through 100 { .m#{$i}{width:$width+$i;float:left;min-height:1px} }
-	@for $i from 0 through 100 { .l#{$i}{width:$width+$i;float:left;min-height:1px} }
-	@for $i from 0 through 100 { .xl#{$i}{width:$width+$i;float:left;min-height:1px} }
+	@for $i from 0 through 100 {.xs#{$i}{ @include loop-behaviour( $loop-number: $i, $loop-width: $width) } }
+	@for $i from 0 through 100 { .s#{$i}{ @include loop-behaviour( $loop-number: $i, $loop-width: $width) } }
+	@for $i from 0 through 100 { .m#{$i}{ @include loop-behaviour( $loop-number: $i, $loop-width: $width) } }
+	@for $i from 0 through 100 { .l#{$i}{ @include loop-behaviour( $loop-number: $i, $loop-width: $width) } }
+	@for $i from 0 through 100 {.xl#{$i}{ @include loop-behaviour( $loop-number: $i, $loop-width: $width) } }
 
 //--------------------------------------------------------------------------------------------------
 
